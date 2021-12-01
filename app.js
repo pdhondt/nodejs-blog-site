@@ -11,6 +11,8 @@ app.listen(port, (req, res) => {
   console.log(`Listening for requests at http://localhost:${port}`);
 });
 
+app.use(express.static("public"));
+
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
