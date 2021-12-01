@@ -1,4 +1,5 @@
 const express = require("express");
+const morgan = require("morgan");
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,8 @@ app.set("views", "ejsViews");
 app.listen(port, (req, res) => {
   console.log(`Listening for requests at http://localhost:${port}`);
 });
+
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   const blogs = [
