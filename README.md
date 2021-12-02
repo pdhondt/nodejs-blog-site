@@ -1,2 +1,2 @@
 # nodejs-blog-site
-A basic blog website built with Node.js, Express, ejs, MongoDB and Mongoose
+An MVC-based simple blog website built with Node.js, Express, EJS, MongoDB and Mongoose

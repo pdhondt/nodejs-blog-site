@@ -22,7 +22,7 @@ app.set("view engine", "ejs");
 app.set("views", "ejsViews");
 
 app.use(express.static("public"));
-app.use(express.urlencoded({ extendec: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // routes
