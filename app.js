@@ -2,16 +2,17 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const blogRoutes = require("./routes/blogRoutes");
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
 
-const dbURI =
-  "mongodb+srv://dbuser:M0ng0DbUsrPwd@cluster0.x9zzv.mongodb.net/node-blog-site?retryWrites=true&w=majority";
+const dbURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@cluster0.x9zzv.mongodb.net/node-blog-site?retryWrites=true&w=majority`;
 mongoose
   .connect(dbURI)
   .then((result) => {
     console.log("connected to the database");
+    console.log(process.env.DB_USER, process.env.DB_PWD);
     app.listen(port, (req, res) => {
       console.log(`Listening for requests at http://localhost:${port}`);
     });
